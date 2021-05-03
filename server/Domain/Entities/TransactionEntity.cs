@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 
-namespace DogeWorker.DogeDb
+namespace Domain.Entities
 {
     public class TransactionEntity
     {
@@ -16,13 +17,18 @@ namespace DogeWorker.DogeDb
         public string Result { get; set; }
     }
 
-    public class UserEntity
+    public class UserEntity : IdentityUser<Guid>
     {
-        public Guid Id { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
+        //public Guid Id { get; set; }
+        //public string Email { get; set; }
+        //public string Username { get; set; }
         public string DogeAddress { get; set; }
         public double Balance { get; set; }
         public byte[] RowVersion { get; set; }
+    }
+
+    public class UserEntityRole : IdentityRole<Guid>
+    {
+
     }
 }

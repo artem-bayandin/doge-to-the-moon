@@ -1,34 +1,23 @@
 ﻿using DogeData.Extensions;
+using Domain.Entities;
+using Domain.Interfaces;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using System.Threading;
-using System.Threading.Tasks;
+using System;
 
-namespace DogeWorker.DogeDb
+namespace DogeData.Context
 {
-    public interface IDogeDbContext
-    {
-        DbSet<TransactionEntity> Transactions { get; set; }
-        DbSet<UserEntity> Users { get; set; }
-
-        Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
-        //Task CommitTransactionAsync(CancellationToken cancellationToken = default);
-        //Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
-    }
-
-    public class DogeDbContext : DbContext, IDogeDbContext
+    public class DogeDbContext : IdentityDbContext<UserEntity, UserEntityRole, Guid>, IDogeDbContext
     {
         public virtual DbSet<TransactionEntity> Transactions { get; set; }
-        public virtual DbSet<UserEntity> Users { get; set; }
 
         public DogeDbContext(DbContextOptions<DogeDbContext> options) : base(options)
         {
         }
 
-        public Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default) => this.Database.BeginTransactionAsync(cancellationToken);
-        //public Task CommitTransactionAsync(CancellationToken cancellationToken = default) => this.Database.CommitTransactionAsync(cancellationToken);
-        //public Task RollbackTransactionAsync(CancellationToken cancellationToken = default) => this.Database.RollbackTransactionAsync(cancellationToken);
+        // public Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default) => this.Database.BeginTransactionAsync(cancellationToken);
+        // public Task CommitTransactionAsync(CancellationToken cancellationToken = default) => this.Database.CommitTransactionAsync(cancellationToken);
+        // public Task RollbackTransactionAsync(CancellationToken cancellationToken = default) => this.Database.RollbackTransactionAsync(cancellationToken);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

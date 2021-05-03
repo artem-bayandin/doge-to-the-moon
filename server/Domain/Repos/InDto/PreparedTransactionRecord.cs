@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DogeData.Repos.InDto
+namespace Domain.Repos.InDto
 {
     public record PreparedTransactionRecord
     (

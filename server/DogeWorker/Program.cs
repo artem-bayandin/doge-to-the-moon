@@ -1,10 +1,13 @@
-using DogeData;
+using DogeData.Context;
 using DogeData.Repos;
-using DogeWorker.DogeDb;
 using DogeWorker.SochainData;
+using Domain.Interfaces;
+using Domain.Repos;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Reflection;
 
 namespace DogeWorker
 {
@@ -28,7 +31,16 @@ namespace DogeWorker
                     services.AddScoped<IDogeDbContext, DogeDbContext>();
                     services.AddScoped<ITransactionRepo, TransactionRepo>();
 
-                    DogeModule.RegisterDb(services, hostContext.Configuration.GetConnectionString("DogeDbContext"));
+                    services
+                        .AddDbContext<DogeDbContext>(
+                            options =>
+                                options.UseSqlServer(
+                                    hostContext.Configuration.GetConnectionString("DogeDbContext"),
+                                    // enable auto migrations
+                                    optionsBuilder => optionsBuilder.MigrationsAssembly(typeof(DogeDbContext).GetTypeInfo().Assembly.GetName().Name)
+                                )
+                    );
+                    //DogeModule.RegisterDb(services, hostContext.Configuration.GetConnectionString("DogeDbContext"));
                 });
     }
 }

@@ -1,4 +1,4 @@
-﻿using DogeWorker.DogeDb;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -15,7 +15,7 @@ namespace DogeData.Seeds
                     {
                         Id = Guid.Parse("00000000-0000-0000-0000-000000000001"),
                         Email = "A6KA@gmail.com",
-                        Username = "A6KA",
+                        UserName = "A6KA",
                         DogeAddress = "A6KAnTjmUdAEnRsg2nTtjEQSKxbEPxdoFq",
                         Balance = 0
                     },
@@ -23,7 +23,7 @@ namespace DogeData.Seeds
                     {
                         Id = Guid.Parse("00000000-0000-0000-0000-000000000002"),
                         Email = "D5dS@gmail.com",
-                        Username = "D5dS",
+                        UserName = "D5dS",
                         DogeAddress = "D5dS4as5e68WE7j9ZWHdNQGiwV1iNAaXTo",
                         Balance = 0
                     },
@@ -31,7 +31,7 @@ namespace DogeData.Seeds
                     {
                         Id = Guid.Parse("00000000-0000-0000-0000-000000000003"),
                         Email = "D7Rw@gmail.com",
-                        Username = "D7Rw",
+                        UserName = "D7Rw",
                         DogeAddress = "D7RwRNSFjzX71aWcGQzhspK6rX695R9wmp",
                         Balance = 0
                     },
@@ -39,7 +39,7 @@ namespace DogeData.Seeds
                     {
                         Id = Guid.Parse("00000000-0000-0000-0000-000000000004"),
                         Email = "DQqe@gmail.com",
-                        Username = "DQqe",
+                        UserName = "DQqe",
                         DogeAddress = "DQqeTDPaHMEfbmgS9WcRKh7oLby29Xq3cc",
                         Balance = 0
                     }

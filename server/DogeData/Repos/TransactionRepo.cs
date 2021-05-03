@@ -1,19 +1,16 @@
-﻿using DogeData.Repos.InDto;
-using DogeWorker.DogeDb;
+﻿using Domain.Entities;
+using Domain.Interfaces;
+using Domain.Repos;
+using Domain.Repos.InDto;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace DogeData.Repos
 {
-    public interface ITransactionRepo
-    {
-        Task<string> GetLastTransactionId(string address);
-        Task<(bool Success, bool ConcurrentException, string LastTxId)> InsertFoundTransactions(List<PreparedTransactionRecord> preparedTransactions);
-    }
 
     public class TransactionRepo : ITransactionRepo
     {
@@ -76,8 +73,8 @@ namespace DogeData.Repos
                     TxTime = prep.Time,
                     Confirmations = prep.Confirmations,
                     TransferredAmount = prep.Value,
-                    InputsJson = JsonSerializer.Serialize(prep.Inputs),
-                    OutputsJson = JsonSerializer.Serialize(prep.Outputs),
+                    InputsJson = JsonConvert.SerializeObject(prep.Inputs),
+                    OutputsJson = JsonConvert.SerializeObject(prep.Outputs),
                     Result = prep.Result,
                     TxJson = prep.TxJson
                 })

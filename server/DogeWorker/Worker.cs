@@ -8,9 +8,10 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using DogeData.Repos.InDto;
 using Microsoft.Extensions.DependencyInjection;
-using DogeData.Repos;
+using Domain.Repos.InDto;
+using Domain.Repos;
+using Newtonsoft.Json;
 
 namespace DogeWorker
 {
@@ -190,7 +191,7 @@ namespace DogeWorker
                         current.Time,
                         current.Inputs, // multi
                         current.Outputs,
-                        System.Text.Json.JsonSerializer.Serialize(current),
+                        JsonConvert.SerializeObject(current),
                         $"Transaction contains too many senders, having {transferredValue} transferred to '{current.TargetAddress}'"
                     );
                     preparedTransactions.Add(invalidSenderTransaction);
@@ -211,7 +212,7 @@ namespace DogeWorker
                     current.Time,
                     current.Inputs, // only one input here
                     current.Outputs.Where(x => x.Address == current.TargetAddress).ToList(),
-                    System.Text.Json.JsonSerializer.Serialize(current),
+                    JsonConvert.SerializeObject(current),
                     $"Transferred {transferredValue} from '{senderAddress}' to '{current.TargetAddress}'"
                 );
                 preparedTransactions.Add(processedTransaction);
