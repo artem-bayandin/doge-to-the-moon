@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogeData.Migrations
 {
     [DbContext(typeof(DogeDbContext))]
-    [Migration("20210503163245_initial")]
+    [Migration("20210504131540_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -150,12 +150,15 @@ namespace DogeData.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000001"),
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "10a4a265-65d9-42dd-b6e8-1d5f9c0d1fbc",
+                            ConcurrencyStamp = "fc648b86-9a02-4e51-b74f-ff7886bb200d",
                             DogeAddress = "A6KAnTjmUdAEnRsg2nTtjEQSKxbEPxdoFq",
                             Email = "A6KA@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "A6KA@gmail.com",
+                            NormalizedUserName = "A6KA",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "582b69ca-33cb-4d2a-9f07-44cf1db9a154",
                             TwoFactorEnabled = false,
                             UserName = "A6KA"
                         },
@@ -164,12 +167,15 @@ namespace DogeData.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000002"),
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "637dae07-3de5-4e21-9cd5-5c6a5190273f",
+                            ConcurrencyStamp = "3c8ebd06-3bdf-4e8f-953d-87a88097bc72",
                             DogeAddress = "D5dS4as5e68WE7j9ZWHdNQGiwV1iNAaXTo",
                             Email = "D5dS@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "D5dS@gmail.com",
+                            NormalizedUserName = "D5dS",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "51e83a68-6ca7-419e-b969-8ced2459bcd2",
                             TwoFactorEnabled = false,
                             UserName = "D5dS"
                         },
@@ -178,12 +184,15 @@ namespace DogeData.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000003"),
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "9db34bef-2013-4674-a6a8-67d19695f710",
+                            ConcurrencyStamp = "b647ef35-35ee-4f27-8c1f-904141a0ae57",
                             DogeAddress = "D7RwRNSFjzX71aWcGQzhspK6rX695R9wmp",
                             Email = "D7Rw@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "D7Rw@gmail.com",
+                            NormalizedUserName = "D7Rw",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "60801b40-1198-40a5-9ff3-44c434cb9f5f",
                             TwoFactorEnabled = false,
                             UserName = "D7Rw"
                         },
@@ -192,12 +201,15 @@ namespace DogeData.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000004"),
                             AccessFailedCount = 0,
                             Balance = 0.0,
-                            ConcurrencyStamp = "8854bfc3-8c44-4588-b2a0-3451c4f1414c",
+                            ConcurrencyStamp = "1ce0794b-a5f3-4940-9f53-459b5b37a057",
                             DogeAddress = "DQqeTDPaHMEfbmgS9WcRKh7oLby29Xq3cc",
                             Email = "DQqe@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "DQqe@gmail.com",
+                            NormalizedUserName = "DQqe",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "a403c730-4178-4471-b25a-a67fcc3cf512",
                             TwoFactorEnabled = false,
                             UserName = "DQqe"
                         });

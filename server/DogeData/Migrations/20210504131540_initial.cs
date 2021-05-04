@@ -182,10 +182,10 @@ namespace DogeData.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Balance", "ConcurrencyStamp", "DogeAddress", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("00000000-0000-0000-0000-000000000001"), 0, 0.0, "10a4a265-65d9-42dd-b6e8-1d5f9c0d1fbc", "A6KAnTjmUdAEnRsg2nTtjEQSKxbEPxdoFq", "A6KA@gmail.com", false, false, null, null, null, null, null, false, null, false, "A6KA" },
-                    { new Guid("00000000-0000-0000-0000-000000000002"), 0, 0.0, "637dae07-3de5-4e21-9cd5-5c6a5190273f", "D5dS4as5e68WE7j9ZWHdNQGiwV1iNAaXTo", "D5dS@gmail.com", false, false, null, null, null, null, null, false, null, false, "D5dS" },
-                    { new Guid("00000000-0000-0000-0000-000000000003"), 0, 0.0, "9db34bef-2013-4674-a6a8-67d19695f710", "D7RwRNSFjzX71aWcGQzhspK6rX695R9wmp", "D7Rw@gmail.com", false, false, null, null, null, null, null, false, null, false, "D7Rw" },
-                    { new Guid("00000000-0000-0000-0000-000000000004"), 0, 0.0, "8854bfc3-8c44-4588-b2a0-3451c4f1414c", "DQqeTDPaHMEfbmgS9WcRKh7oLby29Xq3cc", "DQqe@gmail.com", false, false, null, null, null, null, null, false, null, false, "DQqe" }
+                    { new Guid("00000000-0000-0000-0000-000000000001"), 0, 0.0, "fc648b86-9a02-4e51-b74f-ff7886bb200d", "A6KAnTjmUdAEnRsg2nTtjEQSKxbEPxdoFq", "A6KA@gmail.com", true, false, null, "A6KA@gmail.com", "A6KA", null, null, false, "582b69ca-33cb-4d2a-9f07-44cf1db9a154", false, "A6KA" },
+                    { new Guid("00000000-0000-0000-0000-000000000002"), 0, 0.0, "3c8ebd06-3bdf-4e8f-953d-87a88097bc72", "D5dS4as5e68WE7j9ZWHdNQGiwV1iNAaXTo", "D5dS@gmail.com", true, false, null, "D5dS@gmail.com", "D5dS", null, null, false, "51e83a68-6ca7-419e-b969-8ced2459bcd2", false, "D5dS" },
+                    { new Guid("00000000-0000-0000-0000-000000000003"), 0, 0.0, "b647ef35-35ee-4f27-8c1f-904141a0ae57", "D7RwRNSFjzX71aWcGQzhspK6rX695R9wmp", "D7Rw@gmail.com", true, false, null, "D7Rw@gmail.com", "D7Rw", null, null, false, "60801b40-1198-40a5-9ff3-44c434cb9f5f", false, "D7Rw" },
+                    { new Guid("00000000-0000-0000-0000-000000000004"), 0, 0.0, "1ce0794b-a5f3-4940-9f53-459b5b37a057", "DQqeTDPaHMEfbmgS9WcRKh7oLby29Xq3cc", "DQqe@gmail.com", true, false, null, "DQqe@gmail.com", "DQqe", null, null, false, "a403c730-4178-4471-b25a-a67fcc3cf512", false, "DQqe" }
                 });
 
             migrationBuilder.CreateIndex(
